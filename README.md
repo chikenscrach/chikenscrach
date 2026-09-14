@@ -77,8 +77,6 @@
 </p>
 
 <details>
-
-<details>
 <summary>🏆 GitHub trophies</summary>
 
 <p align="center">
