@@ -77,11 +77,6 @@
 </p>
 
 <details>
-<summary>🔥 Contribution streak</summary>
-
-[View my contribution streak](https://streak-stats.demolab.com?user=chikenscrach&theme=tokyonight&hide_border=true) on GitHub README Streak Stats.
-
-</details>
 
 <details>
 <summary>🏆 GitHub trophies</summary>
