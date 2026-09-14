@@ -50,26 +50,21 @@
 
 </details>
 
-## GitHub overview
+## 📊 GitHub Stats
 
-<!-- Stats: maintained successor of anuraghazra/github-readme-stats. -->
 <p align="center">
-  <a href="https://github.com/chikenscrach?tab=repositories">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=chikenscrach&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;hide_rank=true&amp;include_all_commits=true" />
-      <img width="360" src="https://github-stats-extended.vercel.app/api?username=chikenscrach&amp;show_icons=true&amp;theme=default&amp;bg_color=f8fafc&amp;title_color=6366f1&amp;icon_color=6366f1&amp;hide_border=true&amp;hide_rank=true&amp;include_all_commits=true" alt="cs.g's public GitHub statistics" />
-    </picture>
-  </a>
-  <a href="https://github.com/chikenscrach?tab=repositories">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=chikenscrach&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;langs_count=8" />
-      <img width="360" src="https://github-stats-extended.vercel.app/api/top-langs/?username=chikenscrach&amp;layout=compact&amp;theme=default&amp;bg_color=f8fafc&amp;title_color=6366f1&amp;hide_border=true&amp;langs_count=8" alt="Languages used in cs.g's public repositories" />
-    </picture>
-  </a>
+  <img src="./assets/stats.svg" width="440" alt="GitHub stats" />
+  <img src="./assets/top-langs.svg" width="300" alt="Top languages" />
 </p>
 
 <p align="center">
   <sub>Language proportions reflect repository contents, not proficiency.</sub>
+</p>
+
+## 📈 Contribution activity
+
+<p align="center">
+  <img src="./assets/activity.svg" width="100%" alt="GitHub contributions over the last 31 complete UTC days" />
 </p>
 
 ### Contributions over the past year
@@ -91,12 +86,8 @@
 <details>
 <summary>🏆 GitHub trophies</summary>
 
-<!-- Community endpoint listed in ryo-ma/github-profile-trophy. -->
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://trophy.ryglcloud.net/?username=chikenscrach&amp;theme=tokyonight&amp;no-frame=true&amp;margin-w=8&amp;margin-h=8&amp;column=4" />
-    <img src="https://trophy.ryglcloud.net/?username=chikenscrach&amp;theme=flat&amp;no-frame=true&amp;margin-w=8&amp;margin-h=8&amp;column=4" width="500" alt="cs.g's GitHub trophies" />
-  </picture>
+  <img src="./assets/trophies.svg" width="100%" alt="GitHub trophies" />
 </p>
 
 </details>
