@@ -1,0 +1,103 @@
+name: Update profile SVGs
+
+on:
+  schedule:
+    # 00:17 UTC = 08:17 Taiwan time. GitHub may start scheduled jobs later.
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-svg-updates
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.repository == 'chikenscrach/chikenscrach'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PROFILE_USERNAME: chikenscrach
+      TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Prepare a staging directory
+        run: mkdir -p .generated/profile-svg
+
+      - name: Generate GitHub stats
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: stats
+          options: username=${{ env.PROFILE_USERNAME }}&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true
+          path: .generated/profile-svg/stats.svg
+          token: ${{ github.token }}
+          fail_on_error: 'true'
+
+      - name: Generate top languages
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: top-langs
+          options: username=${{ env.PROFILE_USERNAME }}&layout=compact&theme=tokyonight&hide_border=true&langs_count=8
+          path: .generated/profile-svg/top-langs.svg
+          token: ${{ github.token }}
+          fail_on_error: 'true'
+
+      - name: Generate GitHub trophies
+        uses: ryo-ma/github-profile-trophy@e3c89df995e92e67cdd4b2acaab9d974583dc1f7
+        env:
+          # The upstream generator retries with a second token slot.
+          GITHUB_TOKEN2: ${{ github.token }}
+        with:
+          username: ${{ env.PROFILE_USERNAME }}
+          output_path: .generated/profile-svg/trophies.svg
+          theme: tokyonight
+          token: ${{ github.token }}
+
+      - name: Generate the contribution graph
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/render_activity.py --username "$PROFILE_USERNAME" --output .generated/profile-svg/activity.svg
+
+      - name: Validate and copy the complete set
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          import xml.etree.ElementTree as ET
+
+          source = Path('.generated/profile-svg')
+          names = ('stats.svg', 'top-langs.svg', 'trophies.svg', 'activity.svg')
+          error_phrases = ('something went wrong', 'bad credentials',
+                           'api rate limit exceeded', 'could not resolve to a user')
+          for name in names:
+              data = (source / name).read_bytes()
+              root = ET.fromstring(data)
+              if root.tag != '{http://www.w3.org/2000/svg}svg':
+                  raise SystemExit(f'{name}: response is not SVG')
+              text = ' '.join(root.itertext()).lower()
+              if any(phrase in text for phrase in error_phrases):
+                  raise SystemExit(f'{name}: generator returned an error card')
+          destination = Path('assets')
+          destination.mkdir(exist_ok=True)
+          for name in names:
+              shutil.copyfile(source / name, destination / name)
+          PY
+
+      - name: Commit changed SVGs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/stats.svg assets/top-langs.svg assets/trophies.svg assets/activity.svg
+          if git diff --cached --quiet; then
+            echo 'SVGs are unchanged; no commit needed.'
+            exit 0
+          fi
+          git commit -m 'chore: update profile SVGs'
+          git push origin "HEAD:$TARGET_BRANCH"
