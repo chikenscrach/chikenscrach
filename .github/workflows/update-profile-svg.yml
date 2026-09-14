@@ -65,6 +65,15 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 scripts/render_activity.py --username "$PROFILE_USERNAME" --output .generated/profile-svg/activity.svg
 
+      - name: Generate contribution snake animations
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ env.PROFILE_USERNAME }}
+          github_token: ${{ github.token }}
+          outputs: |
+            .generated/profile-svg/snake.svg
+            .generated/profile-svg/snake-dark.svg?palette=github-dark
+
       - name: Validate and copy the complete set
         run: |
           python3 - <<'PY'
@@ -73,7 +82,7 @@ jobs:
           import xml.etree.ElementTree as ET
 
           source = Path('.generated/profile-svg')
-          names = ('stats.svg', 'top-langs.svg', 'trophies.svg', 'activity.svg')
+          names = ('stats.svg', 'top-langs.svg', 'trophies.svg', 'activity.svg', 'snake.svg', 'snake-dark.svg')
           error_phrases = ('something went wrong', 'bad credentials',
                            'api rate limit exceeded', 'could not resolve to a user')
           for name in names:
@@ -94,7 +103,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- assets/stats.svg assets/top-langs.svg assets/trophies.svg assets/activity.svg
+          git add -- assets/stats.svg assets/top-langs.svg assets/trophies.svg assets/activity.svg assets/snake.svg assets/snake-dark.svg
           if git diff --cached --quiet; then
             echo 'SVGs are unchanged; no commit needed.'
             exit 0
