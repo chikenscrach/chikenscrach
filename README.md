@@ -1,106 +1,108 @@
-<!-- Header banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=220&section=header&text=cs.g&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Passionate%20Developer%20from%20Taiwan%20🇹🇼&descSize=20&descAlignY=58" width="100%" alt="header banner" />
+<!-- Profile README · chikenscrach -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rounded&amp;color=0:7aa2f7,100:bb9af7&amp;height=150&amp;text=cs.g&amp;fontSize=62&amp;fontColor=ffffff&amp;desc=Discord%20Bots%20%C2%B7%20AI%20%C2%B7%20Automation&amp;descSize=18&amp;descAlignY=78" width="100%" alt="cs.g — Discord Bots, AI and Automation" />
+</p>
 
-<!-- Typing intro -->
+<p align="center">
+  <strong>Building useful things, one small project at a time.</strong><br />
+  Developer from Taiwan · Python &amp; JavaScript · Linux enthusiast
+</p>
+
+<p align="center">
+  <a href="https://twitter.com/xdennis881022x"><img src="https://img.shields.io/badge/X-%40xdennis881022x-18181b?style=flat-square&amp;logo=x&amp;logoColor=white" alt="X: @xdennis881022x" /></a>
+  <a href="https://www.youtube.com/@dennis881022"><img src="https://img.shields.io/badge/YouTube-%E5%9D%AB%E5%9F%94%E6%9C%AE-ef4444?style=flat-square&amp;logo=youtube&amp;logoColor=white" alt="YouTube: 坫埔朮" /></a>
+  <a href="https://lookup.guru/578079000086446090"><img src="https://img.shields.io/badge/Discord-cs.g-5865f2?style=flat-square&amp;logo=discord&amp;logoColor=white" alt="Discord: cs.g" /></a>
+</p>
+
+## A little about me
+
+- 🤖 I build **Discord bots, AI integrations and practical automation tools**.
+- 🧠 I'm exploring **deep learning, computer vision and systems programming**.
+- 🐧 I enjoy working with **Linux**, experimenting with new tools, and sharing things on **YouTube**.
+
+## Selected projects
+
+| Project | What it does | Built with |
+| :--- | :--- | :--- |
+| [**GPTjsbot**](https://github.com/chikenscrach/GPTjsbot) | A Discord bot with AI chat, link previews and reminders. | JavaScript · Node.js · Docker |
+| [**ddpybot**](https://github.com/chikenscrach/ddpybot) | A modular Discord bot with AI conversations, earthquake information and community tools. | Python · discord.py · uv |
+| [**ColabDL**](https://github.com/chikenscrach/ColabDL) | Download files in Google Colab and transfer them to cloud storage. | Python · Jupyter · Google Colab |
+
+## My toolbox
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776ab?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/JavaScript-f7df1e?style=flat-square&amp;logo=javascript&amp;logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&amp;logo=nodedotjs&amp;logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Docker-2496ed?style=flat-square&amp;logo=docker&amp;logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Linux-fcc624?style=flat-square&amp;logo=linux&amp;logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/Git-f05032?style=flat-square&amp;logo=git&amp;logoColor=white" alt="Git" />
+</p>
+
+<details>
+<summary>More languages, libraries &amp; tools</summary>
+
+| Area | Technologies |
+| :--- | :--- |
+| Languages | C · C++ · Java · MATLAB |
+| AI &amp; computer vision | PyTorch · TensorFlow · OpenCV |
+| Databases | MySQL · SQLite |
+
+</details>
+
+## GitHub overview
+
+<!-- Stats: maintained successor of anuraghazra/github-readme-stats. -->
+<p align="center">
+  <a href="https://github.com/chikenscrach?tab=repositories">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=chikenscrach&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;hide_rank=true&amp;include_all_commits=true" />
+      <img width="360" src="https://github-stats-extended.vercel.app/api?username=chikenscrach&amp;show_icons=true&amp;theme=default&amp;bg_color=f8fafc&amp;title_color=6366f1&amp;icon_color=6366f1&amp;hide_border=true&amp;hide_rank=true&amp;include_all_commits=true" alt="cs.g's public GitHub statistics" />
+    </picture>
+  </a>
+  <a href="https://github.com/chikenscrach?tab=repositories">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=chikenscrach&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;langs_count=8" />
+      <img width="360" src="https://github-stats-extended.vercel.app/api/top-langs/?username=chikenscrach&amp;layout=compact&amp;theme=default&amp;bg_color=f8fafc&amp;title_color=6366f1&amp;hide_border=true&amp;langs_count=8" alt="Languages used in cs.g's public repositories" />
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <sub>Language proportions reflect repository contents, not proficiency.</sub>
+</p>
+
+### Contributions over the past year
+
+<!-- Annual heatmap replaces the unavailable 31-day activity graph. -->
 <p align="center">
   <a href="https://github.com/chikenscrach">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=800&color=58A6FF&center=true&vCenter=true&width=620&lines=Hi+there%2C+I'm+cs.g+%F0%9F%91%8B;C+%2F+C%2B%2B+%7C+Python+%7C+Java+%7C+JavaScript;Deep+Learning+%E2%80%A2+Computer+Vision+%E2%80%A2+Linux;Always+learning%2C+always+building+%F0%9F%9A%80" alt="typing intro" />
+    <img src="https://ghchart.rshah.org/7aa2f7/chikenscrach" width="100%" alt="cs.g's GitHub contribution calendar over the past year" />
   </a>
 </p>
 
+<details>
+<summary>🔥 Contribution streak</summary>
+
+[View my contribution streak](https://streak-stats.demolab.com?user=chikenscrach&theme=tokyonight&hide_border=true) on GitHub README Streak Stats.
+
+</details>
+
+<details>
+<summary>🏆 GitHub trophies</summary>
+
+<!-- Community endpoint listed in ryo-ma/github-profile-trophy. -->
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=chikenscrach&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="profile views" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://trophy.ryglcloud.net/?username=chikenscrach&amp;theme=tokyonight&amp;no-frame=true&amp;margin-w=8&amp;margin-h=8&amp;column=4" />
+    <img src="https://trophy.ryglcloud.net/?username=chikenscrach&amp;theme=flat&amp;no-frame=true&amp;margin-w=8&amp;margin-h=8&amp;column=4" width="500" alt="cs.g's GitHub trophies" />
+  </picture>
 </p>
 
-<!-- Social badges -->
-<p align="center">
-  <a href="https://twitter.com/xdennis881022x" target="_blank">
-    <img src="https://img.shields.io/badge/X_(Twitter)-@xdennis881022x-000000?style=for-the-badge&logo=x&logoColor=white" alt="X / Twitter" />
-  </a>
-  <a href="https://www.youtube.com/@dennis881022" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube-坫埔朮-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
-  </a>
-  <a href="https://lookup.guru/578079000086446090" target="_blank">
-    <img src="https://img.shields.io/badge/Discord-cs.g-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
-</p>
-
----
-
-## 🧑‍💻 About Me
-
-- 🇹🇼 &nbsp;A passionate developer based in **Taiwan**
-- 🔭 &nbsp;Interested in **Deep Learning, Computer Vision & Systems Programming**
-- 🌱 &nbsp;Currently sharpening my skills in **PyTorch, TensorFlow & OpenCV**
-- 🐧 &nbsp;Daily driver: **Linux** — the terminal is home
-- 🎮 &nbsp;When I'm not coding, you'll find me on **Discord** or making videos on **YouTube**
-
----
-
-## 🛠️ Tech Stack
-
-### 👨‍💻 Languages
-
-<p>
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/MATLAB-e16737?style=for-the-badge&logoColor=white" alt="MATLAB" />
-</p>
-
-### 🤖 AI / Machine Learning
-
-<p>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />
-</p>
-
-### ⚙️ Backend & Database
-
-<p>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-</p>
-
-### 🧰 Tools & Platforms
-
-<p>
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</p>
-
----
-
-## 📊 GitHub Stats
-
-<p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=chikenscrach&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub stats" />
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chikenscrach&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=chikenscrach&theme=tokyonight&hide_border=true" alt="GitHub streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=chikenscrach&theme=tokyo-night&hide_border=true&area=true" width="95%" alt="Contribution graph" />
-</p>
-
-## 🏆 GitHub Trophies
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=chikenscrach&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7" alt="GitHub trophies" />
-</p>
+</details>
 
 ---
 
 <p align="center">
-  <i>⭐️ Thanks for stopping by — feel free to connect! ⭐️</i>
+  <sub>Thanks for stopping by. Feel free to explore a project or say hello 👋</sub>
 </p>
-
-<!-- Footer banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=120&section=footer" width="100%" alt="footer banner" />
