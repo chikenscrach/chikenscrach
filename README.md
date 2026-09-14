@@ -67,13 +67,14 @@
   <img src="./assets/activity.svg" width="100%" alt="GitHub contributions over the last 31 complete UTC days" />
 </p>
 
-### Contributions over the past year
+### 🐍 Contribution snake
 
-<!-- Annual heatmap replaces the unavailable 31-day activity graph. -->
 <p align="center">
-  <a href="https://github.com/chikenscrach">
-    <img src="https://ghchart.rshah.org/7aa2f7/chikenscrach" width="100%" alt="cs.g's GitHub contribution calendar over the past year" />
-  </a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/snake.svg" />
+    <img src="./assets/snake.svg" width="100%" alt="Snake animation eating cs.g's GitHub contributions" />
+  </picture>
 </p>
 
 <details>
