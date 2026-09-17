@@ -5,6 +5,11 @@ on:
     # 00:17 UTC = 08:17 Taiwan time. GitHub may start scheduled jobs later.
     - cron: '17 0 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-profile-svg.yml'
+      - 'scripts/render_activity.py'
 
 permissions:
   contents: write
@@ -15,12 +20,11 @@ concurrency:
 
 jobs:
   generate:
-    if: github.repository == 'chikenscrach/chikenscrach'
+    if: github.repository == 'chikenscrach/chikenscrach' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
       PROFILE_USERNAME: chikenscrach
-      TARGET_BRANCH: ${{ github.event.repository.default_branch }}
 
     steps:
       - name: Check out the default branch
@@ -74,11 +78,10 @@ jobs:
             .generated/profile-svg/snake.svg
             .generated/profile-svg/snake-dark.svg?palette=github-dark
 
-      - name: Validate and copy the complete set
+      - name: Validate the complete set
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import shutil
           import xml.etree.ElementTree as ET
 
           source = Path('.generated/profile-svg')
@@ -93,20 +96,45 @@ jobs:
               text = ' '.join(root.itertext()).lower()
               if any(phrase in text for phrase in error_phrases):
                   raise SystemExit(f'{name}: generator returned an error card')
-          destination = Path('assets')
-          destination.mkdir(exist_ok=True)
-          for name in names:
-              shutil.copyfile(source / name, destination / name)
           PY
 
-      - name: Commit changed SVGs
+      - name: Publish the latest SVG snapshot
+        shell: bash
         run: |
+          set -euo pipefail
+          # This branch contains generated files only and always has one root commit.
+          target_ref=refs/heads/profile-assets
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- assets/stats.svg assets/top-langs.svg assets/trophies.svg assets/activity.svg assets/snake.svg assets/snake-dark.svg
-          if git diff --cached --quiet; then
-            echo 'SVGs are unchanged; no commit needed.'
-            exit 0
+
+          # Use an isolated index so README, scripts and workflow files cannot be published.
+          snapshot_dir=$(mktemp -d)
+          trap 'rm -rf "$snapshot_dir"' EXIT
+          export GIT_INDEX_FILE="$snapshot_dir/index"
+          git read-tree --empty
+          for name in stats.svg top-langs.svg trophies.svg activity.svg snake.svg snake-dark.svg; do
+            blob=$(git hash-object -w -- ".generated/profile-svg/$name")
+            git update-index --add --cacheinfo "100644,$blob,$name"
+          done
+          tree=$(git write-tree)
+
+          # An empty expected SHA permits creation only if the branch is still absent.
+          # Network/authentication errors must fail instead of being treated as absence.
+          remote_ref=$(git ls-remote --refs origin "$target_ref")
+          expected_sha=""
+          if [[ -n "$remote_ref" ]]; then
+            git fetch --no-tags --depth=1 origin "$target_ref"
+            expected_sha=$(git rev-parse FETCH_HEAD)
+            previous_tree=$(git rev-parse "$expected_sha^{tree}")
+            # Read the object itself; shallow fetches can hide parents from git log.
+            parent_count=$(git cat-file commit "$expected_sha" |
+              awk 'BEGIN { header=1 } header && /^parent / { n++ } /^$/ { header=0 } END { print n+0 }')
+            if [[ "$tree" == "$previous_tree" && "$parent_count" == 0 ]]; then
+              echo 'SVGs are unchanged; no publication needed.'
+              exit 0
+            fi
           fi
-          git commit -m 'chore: update profile SVGs'
-          git push origin "HEAD:$TARGET_BRANCH"
+
+          # Omitting -p creates a fresh root, so previous daily snapshots are not ancestors.
+          snapshot=$(git commit-tree "$tree" -m 'chore: update profile SVGs')
+          git push --force-with-lease="$target_ref:$expected_sha" origin "$snapshot:$target_ref"
