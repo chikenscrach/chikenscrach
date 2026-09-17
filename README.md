@@ -53,8 +53,8 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="./assets/stats.svg" width="440" alt="GitHub stats" />
-  <img src="./assets/top-langs.svg" width="300" alt="Top languages" />
+  <img src="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/stats.svg" width="440" alt="GitHub stats" />
+  <img src="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/top-langs.svg" width="300" alt="Top languages" />
 </p>
 
 <p align="center">
@@ -64,16 +64,16 @@
 ## 📈 Contribution activity
 
 <p align="center">
-  <img src="./assets/activity.svg" width="100%" alt="GitHub contributions over the last 31 complete UTC days" />
+  <img src="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/activity.svg" width="100%" alt="GitHub contributions over the last 31 complete UTC days" />
 </p>
 
 ### 🐍 Contribution snake
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/snake.svg" />
-    <img src="./assets/snake.svg" width="100%" alt="Snake animation eating cs.g's GitHub contributions" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/snake.svg" />
+    <img src="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/snake.svg" width="100%" alt="Snake animation eating cs.g's GitHub contributions" />
   </picture>
 </p>
 
@@ -81,7 +81,7 @@
 <summary>🏆 GitHub trophies</summary>
 
 <p align="center">
-  <img src="./assets/trophies.svg" width="100%" alt="GitHub trophies" />
+  <img src="https://raw.githubusercontent.com/chikenscrach/chikenscrach/profile-assets/trophies.svg" width="100%" alt="GitHub trophies" />
 </p>
 
 </details>
